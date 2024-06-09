@@ -1,0 +1,55 @@
+name: Encrypt Oasis JSON
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: |
+        echo '{}' > package.json
+        npm install
+
+    - name: Encrypt specific parts of oasis.json
+      run: |
+        echo "const fs = require('fs');" > encrypt.js
+        echo "const key = 'mysecretkey';" >> encrypt.js
+        echo "const XORCipher = (input, key) => {" >> encrypt.js
+        echo "  let output = '';" >> encrypt.js
+        echo "  for (let i = 0; i < input.length; i++) {" >> encrypt.js
+        echo "    output += String.fromCharCode(input.charCodeAt(i) ^ key.charCodeAt(i % key.length));" >> encrypt.js
+        echo "  }" >> encrypt.js
+        echo "  return output;" >> encrypt.js
+        echo "};" >> encrypt.js
+        echo "const data = JSON.parse(fs.readFileSync('oasis.json', 'utf8'));" >> encrypt.js
+        echo "const encryptSection = (section) => section.map(user => XORCipher(user, key));" >> encrypt.js
+        echo "if (data.WorldPermissionLevels) {" >> encrypt.js
+        echo "  if (data.WorldPermissionLevels.Staff) data.WorldPermissionLevels.Staff = encryptSection(data.WorldPermissionLevels.Staff);" >> encrypt.js
+        echo "  if (data.WorldPermissionLevels.Whale) data.WorldPermissionLevels.Whale = encryptSection(data.WorldPermissionLevels.Whale);" >> encrypt.js
+        echo "  if (data.WorldPermissionLevels.Hero) data.WorldPermissionLevels.Hero = encryptSection(data.WorldPermissionLevels.Hero);" >> encrypt.js
+        echo "  if (data.WorldPermissionLevels.Supporter) data.WorldPermissionLevels.Supporter = encryptSection(data.WorldPermissionLevels.Supporter);" >> encrypt.js
+        echo "  if (data.WorldPermissionLevels.Homie) data.WorldPermissionLevels.Homie = encryptSection(data.WorldPermissionLevels.Homie);" >> encrypt.js
+        echo "  if (data.WorldPermissionLevels.VIP) data.WorldPermissionLevels.VIP = encryptSection(data.WorldPermissionLevels.VIP);" >> encrypt.js
+        echo "}" >> encrypt.js
+        echo "fs.mkdirSync('docs', { recursive: true });" >> encrypt.js
+        echo "fs.writeFileSync('docs/encrypted-oasis.json', JSON.stringify(data, null, 2));" >> encrypt.js
+        node encrypt.js
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
