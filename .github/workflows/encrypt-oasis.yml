@@ -1,4 +1,4 @@
-name: Encrypt Oasis JSON
+name: Encrypt Oasis JSON 
 
 on:
   push:
