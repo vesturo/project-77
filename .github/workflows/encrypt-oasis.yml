@@ -34,7 +34,7 @@ jobs:
         echo "  }" >> encrypt.js
         echo "  return output;" >> encrypt.js
         echo "};" >> encrypt.js
-        echo "const data = JSON.parse(fs.readFileSync('oasis.json', 'utf8'));" >> encrypt.js
+        echo "const data = JSON.parse(fs.readFileSync('web/stringloader/oasis.json', 'utf8'));" >> encrypt.js
         echo "const encryptSection = (section) => section.map(user => XORCipher(user, key));" >> encrypt.js
         echo "if (data.WorldPermissionLevels) {" >> encrypt.js
         echo "  if (data.WorldPermissionLevels.Staff) data.WorldPermissionLevels.Staff = encryptSection(data.WorldPermissionLevels.Staff);" >> encrypt.js
