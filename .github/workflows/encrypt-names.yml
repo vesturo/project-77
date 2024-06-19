@@ -27,7 +27,7 @@ jobs:
       run: |
         cat << 'EOF' > encrypt.js
         const fs = require('fs');
-        const key = 'mysecretkey';
+        const key = process.env.ENCRYPTION_KEY;
         const XORCipher = (input, key) => {
           let output = '';
           for (let i = 0; i < input.length; i++) {
