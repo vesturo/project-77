@@ -1,30 +1,36 @@
 {
   "GlobalRanks": {
     "Staff": [
-      "Example Staff Member // Global Access"
+      "jambarero",
+      "Ari Gold",
+      "Vesturo",
+      "cloudsave",
+      "Аlasky",
+      "Llamahat"
     ],
-    "Media": [
-      "Example Media Member // Global Access"
-    ],
-    "Whale": [
-      "Example Patreon Supporter // ???"
-    ],
-    "Hero": [
-      "Example Patreon Supporter // ???"
-    ],
+    "Media": [],
+    "Whale": [],
+    "Hero": [],
     "Supporter": [
-      "Example Patreon Supporter // ???"
+      "lordm8yt",
+      "Thyrador | SXN",
+      "oceanis"
     ],
-    "Homie": [
-      "Example Patreon Supporter // ???"
-    ],
+    "Homie": [],
     "VIP": [
-      "Example Patreon Supporter // ???"
+      "tendonz",
+      "aquav0dka",
+      "Tuna P",
+      "ThePsych0",
+      "Kyūso",
+      "Starry-Owl",
+      "DJ Jigsaw",
+      ".metamike"
     ]
   },
   "GlobalNotification": "There is currently an Multi-instance compatibleevent going on in VENUE!",
   "GlobalThemeColors": {
-    "OverrideVenueThemeColors":true,
+    "OverrideVenueThemeColors": true,
     "MainColorTheme": "FFFFFF",
     "SecondaryColorTheme": "FFFFFF",
     "ThirtyiaryColorTheme": "FFFFFF",
@@ -72,5 +78,5 @@
         }
       }
     }
-    }
   }
+}
