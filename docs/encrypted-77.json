@@ -1,0 +1,76 @@
+{
+  "GlobalRanks": {
+    "Staff": [
+      "Example Staff Member // Global Access"
+    ],
+    "Media": [
+      "Example Media Member // Global Access"
+    ],
+    "Whale": [
+      "Example Patreon Supporter // ???"
+    ],
+    "Hero": [
+      "Example Patreon Supporter // ???"
+    ],
+    "Supporter": [
+      "Example Patreon Supporter // ???"
+    ],
+    "Homie": [
+      "Example Patreon Supporter // ???"
+    ],
+    "VIP": [
+      "Example Patreon Supporter // ???"
+    ]
+  },
+  "GlobalNotification": "There is currently an Multi-instance compatibleevent going on in VENUE!",
+  "GlobalThemeColors": {
+    "OverrideVenueThemeColors": true,
+    "MainColorTheme": "FFFFFF",
+    "SecondaryColorTheme": "FFFFFF",
+    "ThirtyiaryColorTheme": "FFFFFF",
+    "fourthColorTheme": "FFFFFFF"
+  },
+  "AreaSettings": {
+    "Metro": {
+      "VenuePermissionLevels": {
+        "Staff": [
+          "Example Staff Member // Ability to log in other people"
+        ]
+      },
+      "VenueThemeColors": {
+        "MainColorTheme": "FFFFFF",
+        "SecondaryColorTheme": "FFFFFF",
+        "ThirtyiaryColorTheme": "FFFFFF",
+        "fourthColorTheme": "FFFFFFF"
+      },
+      "VenueSettings": {
+        "DigitalMultiPlex": false,
+        "MultiInstancing": false,
+        "MultiInstancingBot": "ExampleUser",
+        "Puppets": {
+          "Puppet1State": false,
+          "Puppet1User": "Test",
+          "Puppet1Puppet": 1,
+          "Puppet2State": false,
+          "Puppet2User": "Test",
+          "Puppet2Puppet": 1,
+          "Puppet3State": false,
+          "Puppet3User": "Test",
+          "Puppet3Puppet": 1,
+          "Puppet4State": false,
+          "Puppet4User": "Test",
+          "Puppet4Puppet": 1
+        }
+      }
+    },
+    "ApartmentComplex_1": {
+      "Apartment1_R4": {
+        "Owner": "Vesturo",
+        "Access": {
+          "Aquaman56": true,
+          "Firescaw": true
+        }
+      }
+    }
+  }
+}
