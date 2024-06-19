@@ -37,13 +37,13 @@ jobs:
         };
         const data = JSON.parse(fs.readFileSync('77.json', 'utf8'));
         const encryptSection = (section) => section.map(user => XORCipher(user, key));
-        if (data.WorldPermissionLevels) {
-          if (data.WorldPermissionLevels.Staff) data.WorldPermissionLevels.Staff = encryptSection(data.WorldPermissionLevels.Staff);
-          if (data.WorldPermissionLevels.Whale) data.WorldPermissionLevels.Whale = encryptSection(data.WorldPermissionLevels.Whale);
-          if (data.WorldPermissionLevels.Hero) data.WorldPermissionLevels.Hero = encryptSection(data.WorldPermissionLevels.Hero);
-          if (data.WorldPermissionLevels.Supporter) data.WorldPermissionLevels.Supporter = encryptSection(data.WorldPermissionLevels.Supporter);
-          if (data.WorldPermissionLevels.Homie) data.WorldPermissionLevels.Homie = encryptSection(data.WorldPermissionLevels.Homie);
-          if (data.WorldPermissionLevels.VIP) data.WorldPermissionLevels.VIP = encryptSection(data.WorldPermissionLevels.VIP);
+        if (data.GlobalRanks) {
+          if (data.GlobalRanks.Staff) data.GlobalRanks.Staff = encryptSection(data.GlobalRanks.Staff);
+          if (data.GlobalRanks.Whale) data.GlobalRanks.Whale = encryptSection(data.GlobalRanks.Whale);
+          if (data.GlobalRanks.Hero) data.GlobalRanks.Hero = encryptSection(data.GlobalRanks.Hero);
+          if (data.GlobalRanks.Supporter) data.GlobalRanks.Supporter = encryptSection(data.GlobalRanks.Supporter);
+          if (data.GlobalRanks.Homie) data.GlobalRanks.Homie = encryptSection(data.GlobalRanks.Homie);
+          if (data.GlobalRanks.VIP) data.GlobalRanks.VIP = encryptSection(data.GlobalRanks.VIP);
         }
         fs.mkdirSync('docs', { recursive: true });
         fs.writeFileSync('docs/encrypted-77.json', JSON.stringify(data, null, 2));
