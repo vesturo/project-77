@@ -1,0 +1,1 @@
+[![pages-build-deployment](https://github.com/vesturo/project-77/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/vesturo/project-77/actions/workflows/pages/pages-build-deployment)
