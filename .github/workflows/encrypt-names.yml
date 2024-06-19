@@ -1,4 +1,4 @@
-name: Encrypt Oasis JSON 
+name: Encrypt 77 JSON 
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
           }
           return output;
         };
-        const data = JSON.parse(fs.readFileSync('oasis.json', 'utf8'));
+        const data = JSON.parse(fs.readFileSync('77.json', 'utf8'));
         const encryptSection = (section) => section.map(user => XORCipher(user, key));
         if (data.WorldPermissionLevels) {
           if (data.WorldPermissionLevels.Staff) data.WorldPermissionLevels.Staff = encryptSection(data.WorldPermissionLevels.Staff);
