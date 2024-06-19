@@ -1,4 +1,4 @@
-name: Encrypt 77 JSON 
+name: Encrypt Oasis JSON 
 
 on:
   push:
@@ -35,8 +35,11 @@ jobs:
           }
           return output;
         };
-        const data = JSON.parse(fs.readFileSync('77.json', 'utf8'));
+        const data = JSON.parse(fs.readFileSync('oasis.json', 'utf8'));
+
         const encryptSection = (section) => section.map(user => XORCipher(user, key));
+
+        // Encrypt GlobalRanks sections
         if (data.GlobalRanks) {
           if (data.GlobalRanks.Staff) data.GlobalRanks.Staff = encryptSection(data.GlobalRanks.Staff);
           if (data.GlobalRanks.Media) data.GlobalRanks.Media = encryptSection(data.GlobalRanks.Media);
@@ -46,6 +49,26 @@ jobs:
           if (data.GlobalRanks.Homie) data.GlobalRanks.Homie = encryptSection(data.GlobalRanks.Homie);
           if (data.GlobalRanks.VIP) data.GlobalRanks.VIP = encryptSection(data.GlobalRanks.VIP);
         }
+
+        // Encrypt Apartment details
+        if (data.AreaSettings) {
+          for (const area in data.AreaSettings) {
+            for (const apartment in data.AreaSettings[area]) {
+              if (data.AreaSettings[area][apartment].Owner) {
+                data.AreaSettings[area][apartment].Owner = XORCipher(data.AreaSettings[area][apartment].Owner, key);
+              }
+              if (data.AreaSettings[area][apartment].Access) {
+                const access = data.AreaSettings[area][apartment].Access;
+                const encryptedAccess = {};
+                for (const key in access) {
+                  encryptedAccess[XORCipher(key, key)] = access[key];
+                }
+                data.AreaSettings[area][apartment].Access = encryptedAccess;
+              }
+            }
+          }
+        }
+
         fs.mkdirSync('docs', { recursive: true });
         fs.writeFileSync('docs/encrypted-77.json', JSON.stringify(data, null, 2));
         EOF
