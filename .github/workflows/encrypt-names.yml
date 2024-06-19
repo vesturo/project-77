@@ -39,6 +39,7 @@ jobs:
         const encryptSection = (section) => section.map(user => XORCipher(user, key));
         if (data.GlobalRanks) {
           if (data.GlobalRanks.Staff) data.GlobalRanks.Staff = encryptSection(data.GlobalRanks.Staff);
+          if (data.GlobalRanks.Media) data.GlobalRanks.Media = encryptSection(data.GlobalRanks.Media);
           if (data.GlobalRanks.Whale) data.GlobalRanks.Whale = encryptSection(data.GlobalRanks.Whale);
           if (data.GlobalRanks.Hero) data.GlobalRanks.Hero = encryptSection(data.GlobalRanks.Hero);
           if (data.GlobalRanks.Supporter) data.GlobalRanks.Supporter = encryptSection(data.GlobalRanks.Supporter);
