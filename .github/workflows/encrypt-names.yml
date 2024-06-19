@@ -48,9 +48,13 @@ jobs:
         fs.mkdirSync('docs', { recursive: true });
         fs.writeFileSync('docs/encrypted-77.json', JSON.stringify(data, null, 2));
         EOF
+      env:
+        ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
 
     - name: Run encryption script
       run: node encrypt.js
+      env:
+        ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
 
     - name: Commit and push changes
       run: |
