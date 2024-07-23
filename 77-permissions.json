@@ -27,7 +27,28 @@
         "6": "DJ Jigsaw",
         "7": ".metamike"
     },
-    "Apartment1_R4": {
+    "Apartment_complex1_L1": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_R1": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_L2": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_R2": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_L3": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_R3": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_L4": {
+        "Owner": "NA"
+    }
+    "Apartment_complex1_R4": {
         "Owner": "Vesturo",
         "Access0": "Aquaman56",
         "Access1": "Firescaw"
