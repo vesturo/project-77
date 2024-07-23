@@ -1,83 +1,35 @@
 {
-  "GlobalRanks": {
-    "Staff": [
-      "\u001a\u0013\u0002\b\u0004\u0011\u0011EX",
-      "1\u0000\u0006J\"\f\u0018S",
-      "&\u0017\u001c\u001e\u0010\u0011\u001b",
-      "\u0013\u001e\u0000\u001f\u0001\u0010\u0015AR",
-      "Ѡ\u001e\u000e\u0019\u000e\u001a",
-      "<\u001e\u000e\u0007\u0004\u000b\u0015C",
-      "\"\u0017\u000b\u0002\u0004\u0014\u001fD"
-    ],
-    "Media": [],
-    "Whale": [],
-    "Hero": [],
-    "Supporter": [
-      "\u001c\u001d\u001d\u000e\b[\rC",
-      "$\u001a\u0016\u0018\u0004\u0007\u001bE\u0017\u0015S =-",
-      "\u001f\u0011\n\u000b\u000b\n\u0007"
-    ],
-    "Homie": [],
-    "VIP": [
-      "\u0004\u0017\u0001\u000e\n\r\u000e",
-      "\u0011\u0003\u001a\u000b\u0013S\u0010\\V",
-      "$\u0007\u0001\u000bE3",
-      "$\u001a\n:\u0016\u001a\u0017_\u0007",
-      ";\u000bĄ\u0019\n",
-      "#\u0006\u000e\u0018\u0017\u001aYx@\u0005",
-      "48O \f\u0004\u0007V@",
-      "^\u001f\n\u001e\u0004\u000e\u001d\\R"
-    ]
+  "Staff": {
+    "0": "vmynmdqda",
+    "1": "Mdu Saxp",
+    "2": "Hqefgda",
+    "3": "oxagpemhq",
+    "4": "Аxmewk",
+    "5": "Xxmymtmf",
+    "6": "Dqptmiwe"
   },
-  "GlobalNotification": "There is currently an Multi-instance compatibleevent going on in VENUE!",
-  "GlobalThemeColors": {
-    "OverrideVenueThemeColors": true,
-    "MainColorTheme": "FFFFFF",
-    "SecondaryColorTheme": "FFFFFF",
-    "ThirtyiaryColorTheme": "FFFFFF",
-    "fourthColorTheme": "FFFFFFF"
+  "Media": {},
+  "Whale": {},
+  "Hero": {},
+  "Supporter": {
+    "0": "xadpy8kf",
+    "1": "Ftkdmpad | EJZ",
+    "2": "aoqmzue"
   },
-  "AreaSettings": {
-    "Metro": {
-      "VenuePermissionLevels": {
-        "Staff": [
-          "Example Staff Member // Ability to log in other people"
-        ]
-      },
-      "VenueThemeColors": {
-        "MainColorTheme": "FFFFFF",
-        "SecondaryColorTheme": "FFFFFF",
-        "ThirtyiaryColorTheme": "FFFFFF",
-        "fourthColorTheme": "FFFFFFF"
-      },
-      "VenueSettings": {
-        "DigitalMultiPlex": false,
-        "MultiInstancing": false,
-        "MultiInstancingBot": "ExampleUser",
-        "Puppets": {
-          "Puppet1State": false,
-          "Puppet1User": "Test",
-          "Puppet1Puppet": 1,
-          "Puppet2State": false,
-          "Puppet2User": "Test",
-          "Puppet2Puppet": 1,
-          "Puppet3State": false,
-          "Puppet3User": "Test",
-          "Puppet3Puppet": 1,
-          "Puppet4State": false,
-          "Puppet4User": "Test",
-          "Puppet4Puppet": 1
-        }
-      }
-    },
-    "ApartmentComplex_1": {
-      "Apartment1_R4": {
-        "Owner": "&\u0017\u001c\u001e\u0010\u0011\u001b",
-        "Access": {
-          "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000": true,
-          "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000": true
-        }
-      }
-    }
+  "Homie": {},
+  "VIP": {
+    "0": "fqzpazl",
+    "1": "mcgmh0pwm",
+    "2": "Fgzm B",
+    "3": "FtqBekot0",
+    "4": "Wkūea",
+    "5": "Efmddk-Aix",
+    "6": "PV Vusemi",
+    "7": ".yqfmyuwq"
+  },
+  "Apartment1_R4": {
+    "Owner": "Hqefgda",
+    "Access0": "Mcgmymz56",
+    "Access1": "Rudqeomi"
   }
 }
