@@ -49,7 +49,7 @@ jobs:
           for (const key in obj) {
             if (typeof obj[key] === 'string') {
               obj[key] = caesarShift(obj[key], shift);
-            } else if (typeof obj[key] === 'object') {
+            } else if (typeof obj[key] === 'object' && obj[key] !== null) {
               encryptObject(obj[key]);
             }
           }
