@@ -55,20 +55,23 @@ jobs:
           }
         };
 
-        const data = JSON.parse(fs.readFileSync('77-permissions.json', 'utf8'));
-
-        encryptObject(data);
-
-        fs.mkdirSync('docs', { recursive: true });
-        fs.writeFileSync('docs/encrypted-77.json', JSON.stringify(data, null, 2));
+        try {
+          const data = JSON.parse(fs.readFileSync('77-permissions.json', 'utf8'));
+          encryptObject(data);
+          fs.mkdirSync('docs', { recursive: true });
+          fs.writeFileSync('docs/encrypted-77.json', JSON.stringify(data, null, 2));
+        } catch (error) {
+          console.error("Error reading or parsing the JSON file:", error);
+          process.exit(1);
+        }
         EOF
       env:
-        CAESAR_SHIFT: ${{ secrets.SHIFT_KEY }}
+        CAESAR_SHIFT: ${{ secrets.CAESAR_SHIFT }}
 
     - name: Run encryption script
       run: node encrypt.js
       env:
-        CAESAR_SHIFT: ${{ secrets.SHIFT_KEY }}
+        CAESAR_SHIFT: ${{ secrets.CAESAR_SHIFT }}
 
     - name: Commit and push changes
       run: |
