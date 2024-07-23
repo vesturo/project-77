@@ -45,38 +45,30 @@ jobs:
           }).join('');
         };
 
-        const encryptSection = section => Object.fromEntries(
-          Object.entries(section).map(([key, value]) => [key, caesarShift(value, shift)])
-        );
+        const encryptObject = obj => {
+          for (const key in obj) {
+            if (typeof obj[key] === 'string') {
+              obj[key] = caesarShift(obj[key], shift);
+            } else if (typeof obj[key] === 'object') {
+              encryptObject(obj[key]);
+            }
+          }
+        };
 
         const data = JSON.parse(fs.readFileSync('77-permissions.json', 'utf8'));
 
-        // Encrypt relevant sections
-        if (data.Staff) data.Staff = encryptSection(data.Staff);
-        if (data.Supporter) data.Supporter = encryptSection(data.Supporter);
-        if (data.VIP) data.VIP = encryptSection(data.VIP);
-
-        // Encrypt Apartment details
-        if (data.Apartment1_R4) {
-          if (data.Apartment1_R4.Owner) {
-            data.Apartment1_R4.Owner = caesarShift(data.Apartment1_R4.Owner, shift);
-          }
-          if (data.Apartment1_R4.Access) {
-            data.Apartment1_R4.Access0 = caesarShift(data.Apartment1_R4.Access0, shift);
-            data.Apartment1_R4.Access1 = caesarShift(data.Apartment1_R4.Access1, shift);
-          }
-        }
+        encryptObject(data);
 
         fs.mkdirSync('docs', { recursive: true });
         fs.writeFileSync('docs/encrypted-77.json', JSON.stringify(data, null, 2));
         EOF
       env:
-        CAESAR_SHIFT: ${{ secrets.CAESAR_SHIFT }}
+        CAESAR_SHIFT: ${{ secrets.SHIFT_KEY }}
 
     - name: Run encryption script
       run: node encrypt.js
       env:
-        CAESAR_SHIFT: ${{ secrets.CAESAR_SHIFT }}
+        CAESAR_SHIFT: ${{ secrets.SHIFT_KEY }}
 
     - name: Commit and push changes
       run: |
